@@ -1,4 +1,4 @@
-EXPORT ModChicagoCrimes := Module
+EXPORT ModChicagoCrimes_raw := Module
 //
     EXPORT LayoutCC := RECORD
         STRING  ID;
@@ -25,6 +25,6 @@ EXPORT ModChicagoCrimes := Module
         STRING  Location;
     END;
 //
-   EXPORT FileCC := DATASET('~class::mdm::orig::chicagocrimes',LayoutCC,CSV(HEADING(1)));
+   EXPORT FileCC := DATASET('~class::mdm::raw::chicagocrimes',LayoutCC,CSV(HEADING(1)));
 END;
 //

@@ -4,7 +4,7 @@
 // Mydef := 'Olá mundo';  // definicao do tipo "value"
 
 // Uma acao
-// OUTPUT('Olá mundo');
+OUTPUT('Olá mundo');
 // OUTPUT(mydef);
 // *****
 // Estruturas de dados basicas em ECL
@@ -22,11 +22,12 @@ END;
 // Declaracao DATASET
 ds := DATASET([{'Alysson','Oliveira','M',26,100,1000.50},
                {'Bruno','Camargo','',22,-100,500.00},
-							 {'Elaine','Silva','F',19,-50,750.60},
-							 {'Julia','Caetano','F',45,500,5000},
-							 {'Odair','Ferreira','M',66,350,6000},
-							 {'Orlando','Silva','U',67,300,4000}],rec);
-//	OUTPUT(ds);
+			   {'Elaine','Silva','F',19,-50,750.60},
+			   {'Julia','Caetano','F',45,500,5000},
+			   {'Odair','Ferreira','M',66,350,6000},
+			   {'Orlando','Silva','U',67,300,4000}],rec);
+// OUTPUT(ds);			//	HERE 01
+// ds;
 
 // *****
 // Filtragem e tabulaçao de datasets
@@ -36,7 +37,7 @@ ds := DATASET([{'Alysson','Oliveira','M',26,100,1000.50},
 // recset := ds(Age<65,Gender='M');
 // recset;
 
-// IsSeniorMale := ds.Age<65 AND ds.Gender='M'; //definição do tipo "boolean"
+// IsSeniorMale := ds.Age>65 AND ds.Gender='M'; //definição do tipo "boolean"
 // recset := ds(IsSeniorMale);
 // recset;
 
@@ -46,8 +47,8 @@ ds := DATASET([{'Alysson','Oliveira','M',26,100,1000.50},
 // COUNT(recset);    //Equivale a: OUTPUT(COUNT(recset));
 
 // rec2 := RECORD
-  // ds.Gender;
-	// cnt := COUNT(GROUP);
+//   ds.Gender;
+// 	 cnt := COUNT(GROUP);
 // END;
 
 // crosstab := TABLE(ds,rec2,Gender);
@@ -71,8 +72,8 @@ ds := DATASET([{'Alysson','Oliveira','M',26,100,1000.50},
 // dedptbl;
 
 // Adicao de campo no dataset
-/*rec2 := RECORD
-  UNSIGNED   recid;  
+rec2 := RECORD
+  	UNSIGNED   recid;  
 	STRING10   Firstname;
 	STRING     Lastname;
 	STRING1    Gender;
@@ -80,37 +81,37 @@ ds := DATASET([{'Alysson','Oliveira','M',26,100,1000.50},
 	INTEGER    Balance;
 	DECIMAL7_2 Income;
 END;
-
+//
 IMPORT STD;
 rec2 MyTransf(rec Le, UNSIGNED cnt) := TRANSFORM
-  SELF.recid:=cnt;
-	SELF.Firstname := STD.Str.ToUpperCase(Le.Firstname);
-	SELF.Lastname := STD.Str.ToUpperCase(Le.LastName);
-  SELF := Le;
+  	SELF.recid 		:= cnt;
+	SELF.Firstname 	:= STD.Str.ToUpperCase(Le.Firstname);
+	SELF.Lastname 	:= STD.Str.ToUpperCase(Le.LastName);
+  	SELF 			:= Le;
 END;
-
+//
 newds := PROJECT(ds,MyTransf(LEFT,COUNTER));
-
-newds;
+//
+// newds;			//	HERE 02
 
 rec3 := RECORD
-  STRING10  Firstname;
-	STRING    Lastname;
-	STRING    Email;
+	STRING10  	Firstname;
+	STRING  	Lastname;
+	STRING  	Email;
 END;
-*/
+
 // Declaracao DATASET
-/*
+
 ds2 := DATASET([{'ALYSSON','OLIVEIRA','alysson.oliveira@gmail.com'},
-               {'BRUNO','CAMARGO','bruno.camargo@gmail.com'},
-							 {'ELAINE','SILVA','elaine.silva@gmail.com'},
-							 {'JULIA','CAETANO','julia.caetano@gmail.com'},
-							 {'ODAIR','FERREIRA','odair.ferreira@gmail.com'},
-							 {'ORLANDO','SILVA','orlando.silva@gmail.com'}],rec3);
-OUTPUT(ds2);
-*/
+               	{'BRUNO','CAMARGO','bruno.camargo@gmail.com'},
+				{'ELAINE','SILVA','elaine.silva@gmail.com'},
+				{'JULIA','CAETANO','julia.caetano@gmail.com'},
+				{'ODAIR','FERREIRA','odair.ferreira@gmail.com'},
+				{'ORLANDO','SILVA','orlando.silva@gmail.com'}],rec3);
+//	OUTPUT(ds2);			//	HERE 03
+
 // Fazendo JOIN de datasets
-/*rec4 := RECORD
+rec4 := RECORD
   rec2;
   rec3.Email;
 END;
@@ -121,8 +122,5 @@ rec4 MyTransf2(rec2 Le, rec3 Ri) := TRANSFORM
 END;
 
 joineds := JOIN(newds,ds2,LEFT.Firstname=RIGHT.Firstname AND LEFT.Lastname=RIGHT.Lastname,MyTransf2(LEFT,RIGHT));
-joineds;
-*/
-
-
+//	joineds;				// 	HERE 04
 
