@@ -1,7 +1,7 @@
 EXPORT ModChicagoCrimes_optimized := Module
 //
     EXPORT LayoutCC := RECORD
-        UNSIGNED ID;
+        UNSIGNED    ID;
         STRING      Case_Number;
         STRING      Date;
         STRING      Block;
