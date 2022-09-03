@@ -1,6 +1,6 @@
 {
     "ecl.forceProxySupport": true,
-    "ecl.launchConfiguration": "localhost",
+    "ecl.launchConfiguration": "TrainingCluster",
     "ecl.targetCluster": {
         "TrainingCluster": "roxie"
     }
