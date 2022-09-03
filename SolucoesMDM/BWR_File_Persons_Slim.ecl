@@ -1,4 +1,4 @@
-IMPORT $;
+IMPORT $;			//	File 04
 //
 $.File_Persons_Slim.Layout Slimdown($.STD_Persons.Layout L, $.File_LookupCSZ.Layout R) := TRANSFORM
 	SELF.CSZ_ID := R.CSZ_ID;

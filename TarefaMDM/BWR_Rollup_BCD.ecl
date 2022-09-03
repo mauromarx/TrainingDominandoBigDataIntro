@@ -26,6 +26,4 @@ Rollup_BCD := ROLLUP(Sort_Recs, LEFT.Community_Area = RIGHT.Community_Area AND
 Rollup_BCD2 := SORT (Rollup_BCD,BCD_ID);
 //
 OUTPUT(Rollup_BCD2,,'~CLASS::MDM::OUT::LookupBCD',OVERWRITE);
-// count(Rollup_CSZ2);
-// OUTPUT(Rollup_CSZ,,'~CLASS::HMW::OUT::LookupCSZ',OVERWRITE);
 //
