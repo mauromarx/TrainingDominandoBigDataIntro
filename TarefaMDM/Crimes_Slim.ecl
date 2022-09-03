@@ -8,7 +8,7 @@ EXPORT Crimes_Slim := MODULE
 		UNSIGNED4 BCD_ID;
 	END;
 	EXPORT File := DATASET('~CLASS::MDM::OUT::Crimes_Slim',Layout,FLAT);
-//	EXPORT IDX_PType_LDesc := INDEX(File,{Primary_Type,Location_Description},{File},
-//                                          '~CLASS::MDM::KEY::PType_LDesc');
+	EXPORT IDX_PType_LDesc := INDEX(File,{primary_type,location_description},{File},
+                                          '~CLASS::MDM::KEY::PType_LDesc');
 END;
 //

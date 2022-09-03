@@ -6,9 +6,9 @@ EXPORT ModChicagoCrimes_optimized := Module
         STRING      Date;
         STRING      Block;
         STRING      IUCR;
-        STRING      Primary_Type;
+        STRING33      Primary_Type;             //  due to IDX_PType_LDesc
         STRING      Description;
-        STRING      Location_Description;
+        STRING59      Location_Description;     //  due to IDX_PType_LDesc
         BOOLEAN     Arrest;
         BOOLEAN     Domestic;
         UNSIGNED2   Beat;

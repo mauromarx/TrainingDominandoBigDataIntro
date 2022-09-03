@@ -2,6 +2,6 @@
     "ecl.forceProxySupport": true,
     "ecl.launchConfiguration": "TrainingCluster",
     "ecl.targetCluster": {
-        "TrainingCluster": "roxie"
+        "TrainingCluster": "thor"
     }
 }
